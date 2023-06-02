@@ -1,0 +1,20 @@
+{
+  "name": "test-api-contrato",
+  "version": "1.0.0",
+  "description": "Teste De API e contrato ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "kellymartins",
+  "license": "ISC",
+  "dependencies": {
+    "@pact-foundation/pact": "^11.0.2",
+    "@types/jest": "^29.5.1",
+    "dotenv": "^16.0.3",
+    "jest": "^29.5.0",
+    "jest-html-reporters": "^3.1.4",
+    "joi": "^17.9.2",
+    "supertest": "^6.3.3"
+  }
+}

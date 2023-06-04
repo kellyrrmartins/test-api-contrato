@@ -16,8 +16,9 @@ jobs:
 
               with:
                   node-version: 16
+            - uses: actions/checkout@v1
             - name: npm test
-              uses: cypress-io/github-action@v5
+              uses: stefanoeb/jest-action@1.0.3
               continue-on-error: true
               with:
                   install-command: npm install

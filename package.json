@@ -17,6 +17,7 @@
     "jest": "^29.5.0",
     "jest-html-reporters": "^3.1.4",
     "joi": "^17.9.2",
+    "start-server-and-test": "^2.0.0",
     "supertest": "^6.3.3"
   }
 }

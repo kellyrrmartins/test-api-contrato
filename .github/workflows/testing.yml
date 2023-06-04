@@ -20,6 +20,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node-version }}
-                  install-command: npm install
+            - name: npm install
+              run: test:run-ci
             - name: test
               run: npm test

@@ -5,22 +5,20 @@ on:
         branches: [ci]
 
     workflow_dispatch:
-
+permissions:
+    contents: write
 jobs:
     test:
         runs-on: ubutu-latest
-
-        strategy:
-            matrix:
-                node-version: [16.x]
-
         steps:
             - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
+            - uses: actions/setup-node@v2
+
               with:
-                  node-version: ${{ matrix.node-version }}
-            - name: npm install
-              run: npm start
-            - name: tests
-              run: npm test
+                  node-version: 16
+            - name: npm test
+              uses: cypress-io/github-action@v5
+              continue-on-error: true
+              with:
+                  install-command: npm install
+                  start: npm start

@@ -1,0 +1,5 @@
+name: EBAC CI
+
+on:
+    push:
+        branches: [ci]

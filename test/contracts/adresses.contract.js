@@ -1,6 +1,6 @@
 const Joi = require('joi')
 
-const adressSchema = Joi.object({
+const adressSchema = Joi.array().items(Joi.object().keys({
   address_1: Joi.string(),
   address_2: Joi.string(),
   city: Joi.string(),
@@ -8,9 +8,8 @@ const adressSchema = Joi.object({
   customers: Joi.array(),
   id: Joi.string(),
   state: Joi.string(),
-  updatedAt: Joi.number(),
+  updatedAt: Joi.string(),
   zip: Joi.number(),
 
-
-})
+}))
 module.exports = adressSchema

@@ -4,7 +4,9 @@
   "description": "Teste De API e contrato ",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:healthCheck": "jest --testNamePattern=HealthCheck",
+    "test:contract": "jest --testNamePattern=Contract"
   },
   "author": "kellymartins",
   "license": "ISC",

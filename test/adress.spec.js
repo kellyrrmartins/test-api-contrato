@@ -3,7 +3,7 @@ const request = require('supertest');
 const { getAccesToken } = require('../utils/request');
 const Joi = require('joi');
 const API_URL = process.env.API_URL
-const contrato = require('./contracts/adresses.contract')
+const contrato = require('./contracts/adresses.contract.js')
 
 describe('Recurso de Clientes', () => {
   let token
@@ -11,7 +11,7 @@ describe('Recurso de Clientes', () => {
   beforeAll(async () => {
     token = await getAccesToken('admin', 'admin')
   })
-  it('Deve retornar lista de endereço', async () => {
+  it('(Contract) Deve validar contrato de endereço', async () => {
     await request(API_URL)
       .get('/addresses')
       .set('Accept', 'application/json')
@@ -22,7 +22,7 @@ describe('Recurso de Clientes', () => {
 
       })
   });
-  it('Deve listar clientes', async () => {
+  it('(HealthCheck) Deve listar clientes', async () => {
     await request(API_URL)
       .get('/addresses')
       .set('Accept', 'application/json')
@@ -30,7 +30,7 @@ describe('Recurso de Clientes', () => {
 
       .then(response => {
         expect(response.statusCode).toEqual(200)
-        // expect(response.body).toBeInstanceOf(Array)
+        expect(response.body).toBeInstanceOf(Array)
       })
   });
 });

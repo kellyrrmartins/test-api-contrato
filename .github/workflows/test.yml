@@ -1,0 +1,30 @@
+name: EBAC CI
+
+on:
+  push:
+    branches: [ ci ]
+    
+  workflow_dispatch:
+  
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
+        continue-on-error: true
+        with:
+          instal-command: npm install
+      - name: Publish Report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./test-api-contrato
+          
+      

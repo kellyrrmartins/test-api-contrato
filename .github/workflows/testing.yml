@@ -8,7 +8,7 @@ on:
 
 jobs:
     test:
-        runs-on: ubutu-latest
+        runs-on: ubuntu-latest
 
         strategy:
             matrix:
@@ -21,6 +21,6 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: npm install
-              run: npm ci
+              run: npm start
             - name: tests
               run: npm test

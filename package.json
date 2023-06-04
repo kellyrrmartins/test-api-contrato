@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:healthCheck": "jest --testNamePattern=HealthCheck",
-    "test:contract": "jest --testNamePattern=Contract"
+    "test:contract": "jest --testNamePattern=Contract",
+    "cy:run-ci": "start-server-and-test start http://localhost:3000/api-doc test"
   },
   "author": "kellymartins",
   "license": "ISC",

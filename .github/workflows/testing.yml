@@ -16,6 +16,5 @@ jobs:
               with:
                   node-version: 16
             - run: npm ci
-            - run: start
             - run: dev:run
             - run: test

@@ -4,10 +4,11 @@
   "description": "Teste De API e contrato ",
   "main": "index.js",
   "scripts": {
+    "start": "http://localhost:3000/api",
     "test": "jest",
     "test:healthCheck": "jest --testNamePattern=HealthCheck",
     "test:contract": "jest --testNamePattern=Contract",
-    "ci": "start-server-and-test start http://localhost:3000/api test"
+    "dev:run": "start-server-and-test start http://localhost:3000/api test"
   },
   "author": "kellymartins",
   "license": "ISC",

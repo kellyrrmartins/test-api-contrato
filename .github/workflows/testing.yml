@@ -1,4 +1,3 @@
-# page actions
 name: EBAC CI
 
 on: [pull_request]

@@ -2,7 +2,7 @@ require('dotenv/config')
 const request = require('supertest');
 const { getAccesToken } = require('../utils/request');
 const API_URL = process.env.API_URL
-const contrato = require('./contracts/customers.contract')
+const contrato = require('./customers.contract')
 describe('Recurso de Clientes', () => {
   let token
 

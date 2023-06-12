@@ -1,6 +1,8 @@
 name: EBAC CI
 
-on: [pull_request]
+on:
+    push:
+        branches: [ci]
 
 jobs:
     tests:

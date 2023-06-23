@@ -8,7 +8,7 @@
     "test": "jest",
     "test:healthCheck": "jest --testNamePattern=HealthCheck",
     "test:contract": "jest --testNamePattern=Contract",
-    "test:run-start": "start-server-and-test start http://localhost:3000/api test"
+    "ci-test": "start-server-and-test http://localhost:3000/api"
   },
   "author": "kellymartins",
   "license": "ISC",

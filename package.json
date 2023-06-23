@@ -4,7 +4,6 @@
   "description": "Teste De API e contrato ",
   "main": "index.js",
   "scripts": {
-    "start": "http://localhost:3000/api",
     "test": "jest",
     "test:healthCheck": "jest --testNamePattern=HealthCheck",
     "test:contract": "jest --testNamePattern=Contract",

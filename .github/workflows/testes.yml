@@ -21,6 +21,6 @@ jobs:
             - name: npm install
               run: npm ci
             - name: start
-              run: npm test:start
+              start: npm test:run-start
             - name: tests
               run: npm test

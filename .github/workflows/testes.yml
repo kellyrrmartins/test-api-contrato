@@ -7,21 +7,39 @@ on:
 jobs:
     tests:
         runs-on: ubuntu-latest
-
         strategy:
             matrix:
                 node-version: [16.x]
-
         steps:
             - uses: actions/checkout@v2
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
-                  node-version: ${{ matrix.node-version }}
-            - name: npm install
+                  node-version: 16.x
+            - name: Clone Project
+              uses: actions/checkout@v2
+            - name: Install project dependencies
               run: npm ci
+            - name: Clone Server Project
+              uses: actions/checkout@v2
+              with:
+                  repository: EBAC-QE/ebac-demo-store-server
+                  path: './server'
+            - name: Install server dependencies
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: install
+                  dir: 'server'
+            - uses: isbang/compose-action@v1.4.1
+              with:
+                  compose-file: './server/docker-compose.db.yml'
+                  services: |
+                      db
+            - name: DB Init
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: db:init
+                  dir: 'server'
             - name: ci-test
-              run: npm ci-test
+              run: npm run ci-test
               continue-on-error: true
-            - name: tests
-              run: npm test

@@ -4,10 +4,11 @@
   "description": "Teste De API e contrato ",
   "main": "index.js",
   "scripts": {
+    "start-server": "cd ./server && yarn install && yarn start",
     "test": "jest",
     "test:healthCheck": "jest --testNamePattern=HealthCheck",
     "test:contract": "jest --testNamePattern=Contract",
-    "ci-test": "start-server-and-test http://localhost:3000/api"
+    "ci-test": "start-server-and-test http://localhost:3000/api test:contract"
   },
   "author": "kellymartins",
   "license": "ISC",
